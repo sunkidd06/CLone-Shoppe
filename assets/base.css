@@ -1,0 +1,148 @@
+:root {
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --primary-color: #f53e;
+    --header-height: 146px;
+    --navbar-height: 46px;
+    --header-search: calc(var(--header-height) - var(--navbar-height));
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+/* Reponsive */
+.gird {
+    width: 1200px;
+    max-width: 100%;
+    /* tu dong day vao giua */
+    margin: 0 auto;
+}
+
+.gird__full-width {
+    width: 100%;
+}
+
+.gird__row {
+    /* tao nhung thang con nam ngang va khi the con > width tu nhay xuong hang */
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -5px;
+}
+/* Test */
+/* .grid__col */
+.gird__columns-2 {
+    width: 16.6667%;
+    padding: 0 5px;
+
+}
+.gird__columns-2-4 {
+    padding: 0 5px;
+    width: 20%;
+    /* color: black; */
+    margin-bottom: 5px;
+}
+
+.gird__columns-10 {
+    padding: 0 5px;
+    width: 83.3333%;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes growth{
+    from {
+        transform: scale(var(--growth-from));
+    }
+    to {
+        transform: scale(var(--growth-to));
+    }
+}
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    animation: fadeIn linear 0.1s;
+} 
+ .modal__overlay { 
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.4);
+}
+.modal__body {
+    --growth-from: 0.7;
+    --growth-to: 1;
+    margin: auto;
+    background-color:white;
+    position: relative;
+    z-index: 2;
+    animation: growth linear 0.1s;
+}
+.fa-google {
+    background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* selection */
+  .select-input{
+      position: relative;
+      padding: 0 12px;
+      border-radius: 2px;
+      background-color: white;
+      min-width: 200px;
+      height: 34px;
+      cursor: pointer;
+      z-index: 1;
+  }
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    list-style: none
+}
+
+.pagination-item {
+    margin: 0 12px;
+}
+
+.pagination-item--active .pagination-item__link {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.pagination-item__link {
+    display: inline-flex;
+    justify-content:center;
+    align-items: center;
+    padding: 0 8px;
+    min-width: 40px;
+    height:30px;
+    text-decoration:none;
+    color: var(--black-color);
+    font-size: 1.4rem;
+    font-weight: 550; 
+    border-radius: 2px;
+}
